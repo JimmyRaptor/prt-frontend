@@ -81,7 +81,13 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <Image className={styles.logo} src="/superset-logo-horiz.png" alt="" width="200" height="150"/>
+        <Image
+          className={styles.logo}
+          src="/superset-logo-horiz.png"
+          alt=""
+          width="200"
+          height="150"
+        />
       </div>
       <ul>
         {menuItems.map((cat) => (
@@ -93,6 +99,10 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <button className={styles.logout}>
+        <MdLogout />
+        Logout
+      </button>
     </div>
   );
 };
