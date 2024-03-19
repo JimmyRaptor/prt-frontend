@@ -1,0 +1,26 @@
+.flexContainer {
+  margin-top: 1rem;
+  display: flex;
+  width: 50%; /* 可调整为需要的宽度 */
+}
+
+.imageContainer {
+  flex: 1; /* 图像区域占据1/3的宽度 */
+  /* 确保图像填充容器，可根据需要调整 */
+  display: flex;
+  justify-content: center;
+  align-items:first baseline;
+}
+
+.imageContainer img {
+  width: 100%; /* 或使用max-width来确保图像不会过大 */
+  height: auto; /* 保持图像宽高比 */
+}
+
+.childrenContainer {
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 2px solid #000; /* 用于调试 */
+}
