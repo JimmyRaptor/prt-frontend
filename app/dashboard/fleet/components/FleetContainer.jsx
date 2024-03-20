@@ -1,20 +1,61 @@
-import styles from "./FleetContainer.module.css";
-import Image from 'next/image';
+import Image from "next/image";
+import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
-const FleetContainer = ({ imageSrc, children }) => {
+const FleetContainer = ({ imageSrc, deviceType }) => {
+  const router = useRouter();
+  const statuses = [
+    { label: "Down", color: "#E06353" },
+    { label: "Delay", color: "#E0A953" },
+    { label: "Ready", color: "#5DAB53" },
+    { label: "Standby", color: "#70B4FF" },
+  ];
+
+  const handleBoxClick = (type) => {
+    const path = `/dashboard/fleet/${type.toLowerCase()}`;
+    router.push(path);
+  };
   return (
-    <div className={styles.flexContainer}>
-      <div className={styles.imageContainer}>
-      <Image 
-          src={imageSrc} 
-          alt="Left Side Image" 
-          width={500} // 假定宽度，实际可以根据需要调整
-          height={300} // 假定高度，实际可以根据需要调整
-          layout="responsive" // 保持图像的宽高比
+    <Flex
+      marginTop="1rem"
+      direction="column"
+      align="center"
+      width="31%"
+      onClick={() => handleBoxClick(deviceType)}
+      border="2px solid white" 
+      borderRadius="lg" 
+      p={3} 
+      boxShadow="lg" 
+      m={2}
+    >
+      <Box maxWidth="300px" alignSelf="center">
+        <Image
+          src={imageSrc}
+          alt="Left Side Image"
+          width={200}
+          height={200}
+          layout="responsive"
         />
-      </div>
-      <div className={styles.childrenContainer}>{children}</div>
-    </div>
+      </Box>
+      <SimpleGrid columns={2} spacing={4} marginTop="1rem">
+        {statuses.map((status, index) => (
+          <Box
+            key={index}
+            width="10rem"
+            height="5rem"
+            bg={status.color}
+            color="white"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="lg"
+            shadow="md"
+          >
+            {status.label}: 6
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Flex>
   );
 };
 

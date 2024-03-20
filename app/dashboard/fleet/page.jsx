@@ -1,30 +1,25 @@
 "use client";
 // FleetPage.jsx
 import React from "react";
-import devices from "@/public/fleet/devices.json";
 import Legend from "./components/Legend";
-import FleetItem from "./components/FleetItem";
+import FleetContainer from "./components/FleetContainer";
+import { BreadcrumbItem, Breadcrumb, BreadcrumbLink } from "@chakra-ui/react";
 
 const FleetPage = () => {
   return (
     <div style={{ background: "#182237", color: "white" }}>
-      <Legend />
+      <Breadcrumb fontWeight="bold" fontSize="xl" margin="20px">
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/dashboard/fleet">Devices</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <FleetItem
-          imageSrc="/fleet/truck_big1.png"
-          devices={devices.truck}
-          deviceType="truck"
-        />
-        <FleetItem
+        <FleetContainer imageSrc="/fleet/truck_big.png" deviceType="truck" />
+        <FleetContainer
           imageSrc="/fleet/excavator_big.png"
-          devices={devices.excavator}
           deviceType="excavator"
         />
-        <FleetItem
-          imageSrc="/fleet/drill_big.png"
-          devices={devices.drill}
-          deviceType="drill"
-        />
+        <FleetContainer imageSrc="/fleet/drill_big.png" deviceType="drill" />
       </div>
     </div>
   );

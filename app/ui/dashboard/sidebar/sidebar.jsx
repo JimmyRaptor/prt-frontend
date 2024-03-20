@@ -5,13 +5,13 @@ import {
   MdDashboard,
   MdSupervisedUserCircle,
   MdShoppingBag,
-  MdAttachMoney,
   MdWork,
   MdAnalytics,
   MdPeople,
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
+  MdDirectionsCar
 } from "react-icons/md";
 
 const menuItems = [
@@ -29,14 +29,14 @@ const menuItems = [
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Products",
-        path: "/dashboard/products",
+        title: "Map",
+        path: "/dashboard/map",
         icon: <MdShoppingBag />,
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
+        title: "Fleet",
+        path: "/dashboard/fleet",
+        icon: <MdDirectionsCar />,
       },
     ],
   },
@@ -80,13 +80,13 @@ const menuItems = [
 const Sidebar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.user}>
+      <div className={styles}>
         <Image
           className={styles.logo}
           src="/superset-logo-horiz.png"
           alt=""
-          width="200"
-          height="150"
+          width="250"
+          height="200"
         />
       </div>
       <ul>

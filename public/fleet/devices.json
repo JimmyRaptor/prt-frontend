@@ -1,0 +1,290 @@
+{
+  "truck": [
+    {
+      "name": "DT3008",
+      "macAdr": "4827e213e55c",
+      "type": "777G",
+      "model": "R113",
+      "index": 11,
+      "states": 1
+    },
+    {
+      "name": "DT1432",
+      "macAdr": "3030f94e91d8",
+      "type": "777G",
+      "model": "R113",
+      "index": 22,
+      "states": 0
+    },
+    {
+      "name": "DT3006",
+      "macAdr": "3030f94f7974",
+      "type": "777G",
+      "model": "R112",
+      "index": 27,
+      "states": 0
+    },
+    {
+      "name": "DT3007",
+      "macAdr": "3030f94f7800",
+      "type": "777G",
+      "model": "R112",
+      "index": 10,
+      "states": 0
+    },
+    {
+      "name": "DT1430",
+      "macAdr": "3030f94f787c",
+      "type": "V107",
+      "model": "R112",
+      "index": 8,
+      "states": 2
+    },
+    {
+      "name": "DT3002",
+      "macAdr": "3030f94f79cc",
+      "type": "777G",
+      "model": "R112",
+      "index": 21,
+      "states": 0
+    },
+    {
+      "name": "DT3009",
+      "macAdr": "4827e213e5a8",
+      "type": "777G",
+      "model": "R112",
+      "index": 16,
+      "states": 0
+    },
+    {
+      "name": "DT4009",
+      "macAdr": "3030f94f7818",
+      "type": "777F",
+      "model": "V104ABL",
+      "index": 12,
+      "states": 0
+    },
+    {
+      "name": "DT1431",
+      "macAdr": "3030f94f78a8",
+      "type": "V107",
+      "model": "R113",
+      "index": 20,
+      "states": 1
+    },
+    {
+      "name": "DT3012",
+      "macAdr": "3030f94e91b4",
+      "type": "777F",
+      "model": "R113",
+      "index": 21,
+      "states": 2
+    },
+    {
+      "name": "DT3677",
+      "macAdr": "3030f94e9450",
+      "type": "777F",
+      "model": "R113",
+      "index": 24
+    },
+    {
+      "name": "DT2456",
+      "macAdr": "3030f94e91a8",
+      "type": "777F",
+      "model": "R113",
+      "index": 23
+    }
+  ],
+  "excavator": [
+    {
+      "name": "DT3008",
+      "macAdr": "4827e213e55c",
+      "type": "777G",
+      "model": "R113",
+      "index": 11,
+      "states": 1
+    },
+    {
+      "name": "DT1432",
+      "macAdr": "3030f94e91d8",
+      "type": "777G",
+      "model": "R113",
+      "index": 22,
+      "states": 0
+    },
+    {
+      "name": "DT3006",
+      "macAdr": "3030f94f7974",
+      "type": "777G",
+      "model": "R112",
+      "index": 27,
+      "states": 0
+    },
+    {
+      "name": "DT3007",
+      "macAdr": "3030f94f7800",
+      "type": "777G",
+      "model": "R112",
+      "index": 10,
+      "states": 0
+    },
+    {
+      "name": "DT1430",
+      "macAdr": "3030f94f787c",
+      "type": "V107",
+      "model": "R112",
+      "index": 8,
+      "states": 2
+    },
+    {
+      "name": "DT3002",
+      "macAdr": "3030f94f79cc",
+      "type": "777G",
+      "model": "R112",
+      "index": 21,
+      "states": 0
+    },
+    {
+      "name": "DT3009",
+      "macAdr": "4827e213e5a8",
+      "type": "777G",
+      "model": "R112",
+      "index": 16,
+      "states": 0
+    },
+    {
+      "name": "DT4009",
+      "macAdr": "3030f94f7818",
+      "type": "777F",
+      "model": "V104ABL",
+      "index": 12,
+      "states": 0
+    },
+    {
+      "name": "DT1431",
+      "macAdr": "3030f94f78a8",
+      "type": "V107",
+      "model": "R113",
+      "index": 20,
+      "states": 1
+    },
+    {
+      "name": "DT3012",
+      "macAdr": "3030f94e91b4",
+      "type": "777F",
+      "model": "R113",
+      "index": 21,
+      "states": 2
+    },
+    {
+      "name": "DT3677",
+      "macAdr": "3030f94e9450",
+      "type": "777F",
+      "model": "R113",
+      "index": 24
+    },
+    {
+      "name": "DT2456",
+      "macAdr": "3030f94e91a8",
+      "type": "777F",
+      "model": "R113",
+      "index": 23
+    }
+  ],
+  "drill": [
+    {
+      "name": "DT3008",
+      "macAdr": "4827e213e55c",
+      "type": "777G",
+      "model": "R113",
+      "index": 11,
+      "states": 1
+    },
+    {
+      "name": "DT1432",
+      "macAdr": "3030f94e91d8",
+      "type": "777G",
+      "model": "R113",
+      "index": 22,
+      "states": 0
+    },
+    {
+      "name": "DT3006",
+      "macAdr": "3030f94f7974",
+      "type": "777G",
+      "model": "R112",
+      "index": 27,
+      "states": 0
+    },
+    {
+      "name": "DT3007",
+      "macAdr": "3030f94f7800",
+      "type": "777G",
+      "model": "R112",
+      "index": 10,
+      "states": 0
+    },
+    {
+      "name": "DT1430",
+      "macAdr": "3030f94f787c",
+      "type": "V107",
+      "model": "R112",
+      "index": 8,
+      "states": 2
+    },
+    {
+      "name": "DT3002",
+      "macAdr": "3030f94f79cc",
+      "type": "777G",
+      "model": "R112",
+      "index": 21,
+      "states": 0
+    },
+    {
+      "name": "DT3009",
+      "macAdr": "4827e213e5a8",
+      "type": "777G",
+      "model": "R112",
+      "index": 16,
+      "states": 0
+    },
+    {
+      "name": "DT4009",
+      "macAdr": "3030f94f7818",
+      "type": "777F",
+      "model": "V104ABL",
+      "index": 12,
+      "states": 0
+    },
+    {
+      "name": "DT1431",
+      "macAdr": "3030f94f78a8",
+      "type": "V107",
+      "model": "R113",
+      "index": 20,
+      "states": 1
+    },
+    {
+      "name": "DT3012",
+      "macAdr": "3030f94e91b4",
+      "type": "777F",
+      "model": "R113",
+      "index": 21,
+      "states": 2
+    },
+    {
+      "name": "DT3677",
+      "macAdr": "3030f94e9450",
+      "type": "777F",
+      "model": "R113",
+      "index": 24
+    },
+    {
+      "name": "DT2456",
+      "macAdr": "3030f94e91a8",
+      "type": "777F",
+      "model": "R113",
+      "index": 23
+    }
+  ]
+}

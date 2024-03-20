@@ -1,0 +1,116 @@
+{
+    "timestamp": 0,
+    "t": "config",
+    "loc_type":{
+        "0":{"id":"0","state":"DUMP"},"1":{"id":"1","state":"LOAD"},"2":{"id":"2","state":"STOCKPILE"},"3":{"id":"3","state":"INPIT"},"4":{"id":"4","state":"FUEL"},"5":{"id":"5","state":"SHOP"},"6":{"id":"6","state":"PARK"}
+    },
+    "assets":{
+        "1":{"id":"1","t":"DR","oem":"Sandvik ","mod":"D75kx ","n":"DR1770"},"2":{"id":"2","t":"DR","oem":"Sandvik ","mod":"Dl650i","n":"DR1771"},"3":{"id":"3","t":"DR","oem":"Sandvik ","mod":"Dl650i","n":"DR1772"},"4":{"id":"4","t":"DR","oem":"Atlas Copco ","mod":"L8","n":"DR1773"},"5":{"id":"5","t":"DR","oem":"Humma","mod":"UV35-25","n":"MC3270"},"6":{"id":"6","t":"EX","oem":"Hitachi","mod":"EX1900 - 6 ","n":"EX1102 "},"7":{"id":"7","t":"EX","oem":"Hitachi","mod":"EX1200 - 7 BH","n":"EX1103"},"8":{"id":"8","t":"EX","oem":"Cat","mod":"330GC HEX ","n":"EX1106"},"9":{"id":"9","t":"EX","oem":"Hitachi","mod":"EX1200-8","n":"EX1104"},"10":{"id":"10","t":"WL","oem":"Cat","mod":"988K","n":"WL1253"},"11":{"id":"11","t":"WL","oem":"Cat","mod":"988K","n":"WL1254"},"12":{"id":"12","t":"WL","oem":"Cat ","mod":"950M","n":"WL1255"},"13":{"id":"13","t":"WL","oem":"Cat","mod":"914M","n":"WL1256"},"14":{"id":"14","t":"DT","oem":"Cat","mod":"777G","n":"DT1424"},"15":{"id":"15","t":"DT","oem":"Cat","mod":"777G","n":"DT1425"},"16":{"id":"16","t":"DT","oem":"Cat","mod":"777G","n":"DT1426"},"17":{"id":"17","t":"DT","oem":"Cat","mod":"777G","n":"DT1427"},"18":{"id":"18","t":"DT","oem":"Cat","mod":"777G","n":"DT1428"},"19":{"id":"19","t":"DT","oem":"Cat","mod":"777G","n":"DT1429"},"20":{"id":"20","t":"DT","oem":"Cat","mod":"777G","n":"DT1430"},"21":{"id":"21","t":"DT","oem":"Cat","mod":"777G","n":"DT1431"},"22":{"id":"22","t":"DT","oem":"Cat","mod":"777G","n":"DT1432"},"23":{"id":"23","t":"DT","oem":"Cat","mod":"777G","n":"DT3007"},"24":{"id":"24","t":"DT","oem":"Cat","mod":"777G","n":"DT3008"},"25":{"id":"25","t":"DT","oem":"Cat","mod":"777G","n":"DT3009"},"26":{"id":"26","t":"DT","oem":"Cat","mod":"777G","n":"DT3006"},"27":{"id":"27","t":"DT","oem":"Cat","mod":"777F","n":"RD409"},"28":{"id":"28","t":"DT","oem":"Cat","mod":"777G","n":"DT3002"},"29":{"id":"29","t":"WC","oem":"Cat","mod":"740B","n":"WT2145"},"30":{"id":"30","t":"WC","oem":"Cat","mod":"740B","n":"WT2146"},"31":{"id":"31","t":"GR","oem":"Cat","mod":"16M","n":"GR0910"},"32":{"id":"32","t":"DZ","oem":"Cat ","mod":"D9T","n":"DZ1020"},"33":{"id":"33","t":"DZ","oem":"Cat ","mod":"D10T2","n":"DZ1022"},"34":{"id":"34","t":"DZ","oem":"Cat ","mod":"D9T","n":"DZ07"}
+    },
+    "operators": {
+        "0":{"id":"0","n":"Nathan Lacey","t":"LH"},"1":{"id":"1","n":"Adrian Scharenberg","t":"LH"},"2":{"id":"2","n":"Matthew Elliott","t":"LH"},"3":{"id":"3","n":"Marc Manko","t":"LH"},"4":{"id":"4","n":"Greg Warren","t":"LH"},"5":{"id":"5","n":"Alex Wallman","t":"LH"},"6":{"id":"6","n":"James Phelan","t":"LH"},"7":{"id":"7","n":"Strath Cave","t":"LH"},"8":{"id":"8","n":"Colin Joyce","t":"LH"},"9":{"id":"9","n":"Heather Champion","t":"LH"},"10":{"id":"10","n":"Julie Lyall","t":"LH"},"11":{"id":"11","n":"Nick Farantouris","t":"LH"},"12":{"id":"12","n":"Logan Tuip","t":"LH"},"13":{"id":"13","n":"Travis Kirkman","t":"LH"},"14":{"id":"14","n":"Richard Bolton","t":"LH"},"15":{"id":"15","n":"Tom Ryan","t":"LH"},"16":{"id":"16","n":"Jakob Phelan","t":"LH"},"17":{"id":"17","n":"Alistair Lewis","t":"LH"},"18":{"id":"18","n":"Adam Mirtschin","t":"LH"},"19":{"id":"19","n":"Brendan Cock","t":"LH"},"20":{"id":"20","n":"Peter Evans","t":"LH"},"21":{"id":"21","n":"Graeme Hutchinson","t":"LH"},"22":{"id":"22","n":"Joanne Barnett","t":"LH"},"23":{"id":"23","n":"Brandon Hatch","t":"LH"},"24":{"id":"24","n":"Ben Brown","t":"LH"},"25":{"id":"25","n":"Derek Rowe","t":"LH"},"26":{"id":"26","n":"Kale Nealyon","t":"LH"},"27":{"id":"27","n":"Leigh Lyall","t":"LH"},"28":{"id":"28","n":"Tristan Forster Grey","t":"LH"},"29":{"id":"29","n":"Scott Hollis","t":"LH"},"30":{"id":"30","n":"Mark Coates","t":"LH"},"31":{"id":"31","n":"Angelo Pezos","t":"LH"},"32":{"id":"32","n":"Jacob Sier","t":"LH"},"33":{"id":"33","n":"Kym Butler","t":"LH"},"34":{"id":"34","n":"David McFarlane","t":"LH"},"35":{"id":"35","n":"Wim","t":"LH"},"36":{"id":"36","n":"Lynette Millard","t":"LH"},"37":{"id":"37","n":"Max Butler","t":"LH"},"38":{"id":"38","n":"Luci Bedding ","t":"LH"},"39":{"id":"39","n":"Gavin Coulthard","t":"LH"},"40":{"id":"40","n":"Allan Davis","t":"LH"},"41":{"id":"41","n":"Shane Wear","t":"LH"},"42":{"id":"42","n":"Denim Cox","t":"LH"},"43":{"id":"43","n":"Anthony Chester","t":"LH"},"44":{"id":"44","n":"Ken Hart","t":"LH"},"45":{"id":"45","n":"Steve Ramke","t":"LH"},"46":{"id":"46","n":"Dave Goldsmith","t":"LH"},"47":{"id":"47","n":"Jason Mazey","t":"LH"},"48":{"id":"48","n":"Troy Chibnall","t":"LH"},"49":{"id":"49","n":"Derek Agius","t":"LH"},"50":{"id":"50","n":"Stuart Charles","t":"LH"},"51":{"id":"51","n":"Anthony Mayes","t":"LH"},"52":{"id":"52","n":"Justin Andrews","t":"LH"},"53":{"id":"53","n":"David Vozzo","t":"LH"},"54":{"id":"54","n":"Rebecca Pott","t":"LH"},"55":{"id":"55","n":"Michael Bide","t":"LH"},"56":{"id":"56","n":"Josiah Fyfe","t":"LH"},"57":{"id":"57","n":"Jordan Eaton","t":"LH"},"58":{"id":"58","n":"Harley Liebelt","t":"LH"},"59":{"id":"59","n":"Shaun Mayes","t":"LH"},"60":{"id":"60","n":"Josh Pilgrim","t":"LH"},"61":{"id":"61","n":"Candice Barber","t":"LH"},"62":{"id":"62","n":"Jodie Holme","t":"LH"},"63":{"id":"63","n":"Robert Brown","t":"LH"},"64":{"id":"64","n":"Jack Duffield","t":"LH"},"65":{"id":"65","n":"Jerrain Calyon","t":"LH"},"66":{"id":"66","n":"Troy Tarlo-Jautakas","t":"LH"},"67":{"id":"67","n":"Sean Reidy","t":"LH"},"68":{"id":"68","n":"Bradley McLeish","t":"LH"},"69":{"id":"69","n":"John Price","t":"LH"},"70":{"id":"70","n":"William Cathro","t":"LH"},"71":{"id":"71","n":"Judd Donaldson","t":"LH"},"72":{"id":"72","n":"Clinton Steimanis","t":"LH"},"73":{"id":"73","n":"David Scott","t":"LH"},"74":{"id":"74","n":"John Hopkins","t":"LH"},"75":{"id":"75","n":"Peter Kane","t":"LH"},"76":{"id":"76","n":"Samara Stefanovic","t":"LH"},"77":{"id":"77","n":"Tim Bates","t":"LH"},"78":{"id":"78","n":"Todd MacIntyre","t":"LH"},"79":{"id":"79","n":"Robert Parker","t":"LH"},"80":{"id":"80","n":"Ben Shearer","t":"LH"},"81":{"id":"81","n":"Tyrone Strangways","t":"LH"},"82":{"id":"82","n":"Rochelle Wilde","t":"LH"},"83":{"id":"83","n":"Adam Richardson","t":"LH"},"84":{"id":"84","n":"Max Gutsche","t":"LH"},"85":{"id":"85","n":"Francis Lennon","t":"LH"},"86":{"id":"86","n":"Phillip Morris","t":"LH"},"87":{"id":"87","n":"Pearl Royal","t":"LH"},"88":{"id":"88","n":"Luke Seymour","t":"LH"},"89":{"id":"89","n":"Adrian Scharenberg","t":"LH"},"90":{"id":"90","n":"Marc Manko","t":"LH"},"91":{"id":"91","n":"Nathan Lacey","t":"LH"},"92":{"id":"92","n":"Strath Cave","t":"LH"},"93":{"id":"93","n":"Alistair Lewis","t":"LH"},"94":{"id":"94","n":"Adam Mirtschin","t":"LH"},"95":{"id":"95","n":"Tom Ryan","t":"LH"},"96":{"id":"96","n":"Ben Brown","t":"LH"},"97":{"id":"97","n":"Leigh Lyall","t":"LH"},"98":{"id":"98","n":"Scott Hollis","t":"LH"},"99":{"id":"99","n":"David McFarlane","t":"LH"},"100":{"id":"100","n":"Wim Heemskerk","t":"LH"},"101":{"id":"101","n":"Lynette Millard","t":"LH"},"102":{"id":"102","n":"Steve Ramke","t":"LH"},"103":{"id":"103","n":"Jason Mazey","t":"LH"},"104":{"id":"104","n":"Stuart Charles","t":"LH"},"105":{"id":"105","n":"Michael Bide","t":"LH"},"106":{"id":"106","n":"Harley Liebelt","t":"LH"},"107":{"id":"107","n":"Shaun Mayes","t":"LH"},"108":{"id":"108","n":"Kim Knighton","t":"LH"},"109":{"id":"109","n":"Sean Reidy","t":"LH"},"110":{"id":"110","n":"Anthony Mayes","t":"LH"},"111":{"id":"111","n":"Rebecca Pott","t":"LH"},"112":{"id":"112","n":"Clinton Steimanis","t":"LH"},"113":{"id":"113","n":"David Scott","t":"LH"},"114":{"id":"114","n":"Tyrone Strangeways","t":"LH"},"115":{"id":"115","n":"Peter Kane","t":"LH"},"116":{"id":"116","n":"Tony Dick","t":"CR"},"117":{"id":"117","n":"Mathew Smith","t":"CR"},"118":{"id":"118","n":"Cameron Leaney","t":"CR"},"119":{"id":"119","n":"Chad Verrall","t":"CR"},"120":{"id":"120","n":"Sam Baldry","t":"CR"},"121":{"id":"121","n":"Brenton Bartholomew","t":"CR"},"122":{"id":"122","n":"Matthew Chircop","t":"CR"},"123":{"id":"123","n":"Rhett Winter","t":"CR"},"124":{"id":"124","n":"Daniel Pelentsov","t":"CR"},"125":{"id":"125","n":"Barry Cannell","t":"CR"},"126":{"id":"126","n":"Matthew Nykamp","t":"CR"},"127":{"id":"127","n":"Patrick Stokes","t":"CR"},"128":{"id":"128","n":"Michael Whitaker","t":"CR"},"129":{"id":"129","n":"Daniel Rowley","t":"CR"},"130":{"id":"130","n":"Tanner Groat","t":"CR"},"131":{"id":"131","n":"Andrew Williams","t":"CR"},"132":{"id":"132","n":"Riky Grose","t":"CR"},"133":{"id":"133","n":"Jaymes Lovelady","t":"CR"},"134":{"id":"134","n":"Craig Owens","t":"CR"},"135":{"id":"135","n":"Brian Iro","t":"CR"},"136":{"id":"136","n":"Jody Graham","t":"CR"},"137":{"id":"137","n":"Emerson Acosta","t":"CR"},"138":{"id":"138","n":"Thomas Parsons","t":"CR"},"139":{"id":"139","n":"Brian Curley","t":"CR"},"140":{"id":"140","n":"Daniel Misan","t":"CR"},"141":{"id":"141","n":"Martin Brady","t":"CR"},"142":{"id":"142","n":"Shane Lindsay","t":"DB"},"143":{"id":"143","n":"Tommy Sinclair","t":"DB"},"144":{"id":"144","n":"Glen Whyte","t":"DB"},"145":{"id":"145","n":"Isacc McKenzie","t":"DB"},"146":{"id":"146","n":"Gary Barber","t":"DB"},"147":{"id":"147","n":"Con Dimas","t":"DB"},"148":{"id":"148","n":"Peta Fincher","t":"DB"},"149":{"id":"149","n":"Adam Jacques","t":"DB"},"150":{"id":"150","n":"Jed Little ","t":"DB"},"151":{"id":"151","n":"Mark Couch","t":"DB"},"152":{"id":"152","n":"Bradley Overall","t":"DB"},"153":{"id":"153","n":"Tairoa Pritchard","t":"DB"},"154":{"id":"154","n":"Shane MacDonald","t":"DB"},"155":{"id":"155","n":"Sam Vickery","t":"DB"},"156":{"id":"156","n":"Aaron Kahl","t":"DB"},"157":{"id":"157","n":"Kirk Garner","t":"DB"},"158":{"id":"158","n":"Will Gow-Smith","t":"DB"},"159":{"id":"159","n":"Adam O'Brien","t":"DB"},"160":{"id":"160","n":"David Smith","t":"DB"},"161":{"id":"161","n":"Shane Paehua","t":"DB"},"162":{"id":"162","n":"Liam Stirling","t":"DB"},"163":{"id":"163","n":"Bull Alaak","t":"MT"},"164":{"id":"164","n":"Mark Graham","t":"MT"},"165":{"id":"165","n":"David Watson","t":"MT"},"166":{"id":"166","n":"Damian Havriluk","t":"MT"},"167":{"id":"167","n":"Philip Phelps","t":"MT"},"168":{"id":"168","n":"Mark Norfolk","t":"MT"},"169":{"id":"169","n":"Sean Wakelin","t":"MT"},"170":{"id":"170","n":"Callum Onley","t":"MT"},"171":{"id":"171","n":"Jack Crute","t":"MT"},"172":{"id":"172","n":"Darren Bradley","t":"MT"},"173":{"id":"173","n":"Phillip Buckell","t":"MT"},"174":{"id":"174","n":"John Gower","t":"MT"},"175":{"id":"175","n":"Jake Thomas","t":"MT"},"176":{"id":"176","n":"Tim Shearer","t":"MT"},"177":{"id":"177","n":"Riley Heneker","t":"MT"},"178":{"id":"178","n":"Dylan Muscat-Gaston","t":"MT"},"179":{"id":"179","n":"Ryan Strawhan","t":"MT"},"180":{"id":"180","n":"Corey Adams","t":"MT"},"181":{"id":"181","n":"Peter Street","t":"MT"},"182":{"id":"182","n":"Robert Denton","t":"MT"},"183":{"id":"183","n":"David Baxter","t":"MT"},"184":{"id":"184","n":"Brenton Jackson MJM","t":"MT"},"185":{"id":"185","n":"Graham East","t":"MT"},"186":{"id":"186","n":"Lance Wiseman","t":"MT"},"187":{"id":"187","n":"Tyson Thoman","t":"MT"},"188":{"id":"188","n":"Christopher Short","t":"MT"},"189":{"id":"189","n":"Darren Robinson","t":"MT"},"190":{"id":"190","n":"Jordan Green","t":"MT"},"191":{"id":"191","n":"Andrew Hall","t":"MT"},"192":{"id":"192","n":"Peter Murray","t":"MT"},"193":{"id":"193","n":"Simon Goode","t":"MT"},"194":{"id":"194","n":"James McKinnie","t":"MT"},"195":{"id":"195","n":"Corey Jones","t":"MT"},"196":{"id":"196","n":"James Durance","t":"MT"},"197":{"id":"197","n":"Curtley Warren","t":"MT"},"198":{"id":"198","n":"Michael Woer","t":"MT"},"199":{"id":"199","n":"Shayne McKavanagh","t":"MT"},"200":{"id":"200","n":"Graham East","t":"MT"},"201":{"id":"201","n":"Peter Murray","t":"MT"},"202":{"id":"202","n":"Bull Alaak","t":"MT"},"203":{"id":"203","n":"Damian Havriluk","t":"MT"},"204":{"id":"204","n":"Darren Bradley","t":"MT"},"205":{"id":"205","n":"Michael Couch","t":"MT"},"206":{"id":"206","n":"Marco Carraboto","t":"MT"},"207":{"id":"207","n":"Mark Graham","t":"MT"},"208":{"id":"208","n":"Neil Davy","t":"MT"},"209":{"id":"209","n":"Sean Wakelin","t":"MT"},"210":{"id":"210","n":"Mark Couch","t":"DR"},"211":{"id":"211","n":"Con Dimas","t":"DR"},"212":{"id":"212","n":"Dave Smith","t":"DR"},"213":{"id":"213","n":"Shane Paehua","t":"DR"},"214":{"id":"214","n":"Gary Barber","t":"DR"},"215":{"id":"215","n":"Sam Vickery","t":"DR"},"216":{"id":"216","n":"Liam Stirling","t":"DR"},"217":{"id":"217","n":"Shane Lindsay","t":"DR"},"218":{"id":"218","n":"Tommy Sinclair","t":"DR"},"219":{"id":"219","n":"Glen Whyte","t":"DR"},"220":{"id":"220","n":"Peta Fincher","t":"DR"},"221":{"id":"221","n":"Isacc Mckenzie","t":"DR"}
+    },
+    "materials": {
+        "1":{"id":"1","n":"HG","t":"1"},"4":{"id":"4","n":"VLG","t":"1"},"3":{"id":"3","n":"MW","t":"1"},"5":{"id":"5","n":"HG_Fines","t":"1"},"6":{"id":"6","n":"HG_Lump","t":"1"},"7":{"id":"7","n":"LG_Lump","t":"1"},"8":{"id":"8","n":"LG_Fines","t":"1"},"0":{"id":"0","n":"NAF","t":"0"},"2":{"id":"2","n":"PFM","t":"0"}
+    },        
+    "machines": {
+        "DT777": {
+            "Payload": 100,
+            "Fuel_min%": 10,
+            "t": "DT",
+            "Autoready": "True",
+            "Autostandby": "True",
+            "Autodelay": "True",
+            "Autodown": "True",
+            "0": {
+                "desc":"Ready",
+                "colour": "#5dab53",
+                "activities": {"0":"Dumping","1": "Travelling","2": "Spotting","3":"Loading","4": "Hauling", "999": "Uncat"},
+                "override enabled": "False"
+            },
+            "1": {
+                "desc":"Delay",
+                "colour": "#e0a953",
+                "activities": {"100": "Empty Stopped", "101": "Loaded Stopped", "102": "Queue Load","103": "Queue Dump","104": "No Loading Point", "105": "Cleanup","106": "Fuel", "107": "Blast", "999": "Uncat"},
+                "override enabled": "False"
+            },
+            "2": {
+                "desc":"Standby",
+                "colour": "#70b4ff",
+                "activities": {"200": "Fuel", "201":"Blast", "202": "Shift Change", "203": "Lunch", "204":"Breaks", "205": "No Operator", "206": "Safety Stop", "207": "Weather", "208": "Not Required", "999": "Uncat"},
+                "override enabled": "True"
+            },
+            "3": {
+                "desc":"Down",
+                "colour": "#e06353",
+                "activities": {"300":"Planned","301":"Unplanned","302":"Breakdown","303":"Opportune", "999": "Uncat"},
+                "override enabled": "True"
+            }
+        },
+        "EX100": {
+            "Fuel_min%": 10,
+            "t": "EX",
+            "Autoready": "True",
+            "Autostandby": "True",
+            "Autodelay": "True",
+            "Autodown": "True",
+            "0": {
+                "desc":"Ready",
+                "colour": "#1ad917",
+                "activities": {"3":"Loading","7":"Projects","8":"Batters"},
+                "override enabled": "True"
+            },
+            "1": {
+                "desc":"Delay",
+                "colour": "#e4941a",
+                "activities": {"105": "Cleanup","106": "Fuel", "107": "Blast","108": "Waiting","109":"Waiting Support","110":"Tramming"},
+                "override enabled": "True"
+            },
+            "2": {
+                "desc":"Standby",
+                "colour": "#171ed9",
+                "activities": {"201":"Blast", "202": "Shift Change", "203": "Lunch", "204":"Breaks", "205": "No Operator", "206": "Safety Stop", "207": "Weather", "208": "Not Required", "99":"Uncat"},
+                "override enabled": "True"
+            },
+            "3": {
+                "desc":"Down",
+                "colour": "#d91717",
+                "activities": {"300":"Planned","301":"Unplanned","302":"Breakdown","303":"Opportune","99":"Uncat"},
+                "override enabled": "True"
+            }
+        },
+        "DRL": {
+            "Fuel_min%": 10,
+            "t": "DRL",
+            "Autoready": "True",
+            "Autostandby": "True",
+            "Autodelay": "True",
+            "Autodown": "True",
+            "0": {
+                "desc":"Ready",
+                "colour": "#1ad917",
+                "activities": {"1":"Travelling","5":"Drilling"},
+                "override enabled": "True"
+            },
+            "1": {
+                "desc":"Delay",
+                "colour": "#e4941a",
+                "activities": {"105": "Cleanup","106": "Fuel", "107": "Blast","108": "Waiting","109":"Waiting Support","110":"Tramming","111":"Redrill"},
+                "override enabled": "True"
+            },
+            "2": {
+                "desc":"Standby",
+                "colour": "#171ed9",
+                "activities": {"201":"Blast", "202": "Shift Change", "203": "Lunch", "204":"Breaks", "205": "No Operator", "206": "Safety Stop", "207": "Weather", "208": "Not Required", "99":"Uncat"},
+                "override enabled": "True"
+            },
+            "3": {
+                "desc":"Down",
+                "colour": "#d91717",
+                "activities": {"300":"Planned","301":"Unplanned","302":"Breakdown","303":"Opportune","99":"Uncat"},
+                "override enabled": "True"
+            }
+        }
+    }
+}
+

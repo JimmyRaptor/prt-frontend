@@ -9,9 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.1.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@module-federation/nextjs-mf": "^8.2.3",
+    "@react-spring/web": "^9.7.3",
+    "@superset-ui/embedded-sdk": "^0.1.0-alpha.10",
+    "@svgr/webpack": "^8.1.0",
+    "axios": "^1.6.7",
+    "buffer": "^6.0.3",
+    "framer-motion": "^11.0.12",
+    "next": "^14.1.4",
+    "node-fetch": "^2.7.0",
+    "node-polyfill-webpack-plugin": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.11.0"
   },
   "devDependencies": {

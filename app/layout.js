@@ -1,7 +1,6 @@
-import { Inter } from "next/font/google";
 import "./ui/globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Providers } from "./providers";
+import { fonts } from './fonts'
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +9,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={fonts.rubik.variable}>
+      <body style={{background: "#151c2c"}}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
