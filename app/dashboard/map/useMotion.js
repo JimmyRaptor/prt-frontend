@@ -1,121 +1,60 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useMemo,
-  useLayoutEffect,
-  useDebugValue,
-  useCallback
-} from "react";
+import { useState, useEffect, useRef } from 'react';
 
-function getFrames(from, to, step) {
-  console.log("getFrames call");
-  let frames = [];
-  const fromFeatures = from.features;
-  const toFeatures = to.features;
-
-  const segments = fromFeatures.map((val, i) => {
-    const lngFrom = val.geometry.coordinates[0];
-    const lngTo = toFeatures[i].geometry.coordinates[0];
-    const latFrom = val.geometry.coordinates[1];
-    const latTo = toFeatures[i].geometry.coordinates[1];
-    const directionFrom = val.properties.direction;
-    const directionTo = toFeatures[i].properties.direction;
-    const lngSegment = (Number(lngTo) - Number(lngFrom)) / step;
-    const latSegment = (Number(latTo) - Number(latFrom)) / step;
-    const directionSegment =
-      (Number(directionTo) - Number(directionFrom)) / step;
-
-    return [lngSegment, latSegment, directionSegment];
-  });
-  // console.log("segments", segments);
-  for (let p = 0; p <= step; p++) {
-    let frame = {
-      type: "FeatureCollection",
-      features: []
-    };
-    fromFeatures.forEach((val, i) => {
-      const lngFrom = val.geometry.coordinates[0];
-      const latFrom = val.geometry.coordinates[1];
-      const directionFrom = val.properties.direction;
-      const feature = {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [
-            Number(lngFrom) + segments[i][0] * p,
-            Number(latFrom) + segments[i][1] * p
-          ]
-        },
-        properties: {
-          direction: Number(directionFrom) + segments[i][2] * p
-        }
-      };
-      // console.log(
-      //   "feature.lnglat",
-      //   feature.geometry.coordinates,
-      //   feature.properties.direction
-      // );
-      frame.features.push(feature);
-    });
-    // console.log("Frame", frame);
-    frames.push(frame);
-  }
-  console.log("frames:", frames);
-  return frames;
+// 缓动函数，平滑动画的开始和结束
+function easeInOutSine(t) {
+  return -(Math.cos(Math.PI * t) - 1) / 2;
 }
 
-export function useMotion(geoData, step, mapObj) {
-  const oldGeoData = usePrevious(geoData);
-  const [frame, frames] = useFrames(oldGeoData, geoData, step);
-  const mapRef = useRef();
-  const setMap = useCallback(setMapRef, [mapRef.current]);
-
-  useLayoutEffect(() => {
-    if (frames && frames.length > 1 && mapRef.current)
-      startMove(mapRef.current);
-  }, [frames, mapRef.current]);
-  function startMove(map) {
-    let p = 0;
-    if (frames && frames.length > 0) {
-      requestAnimationFrame(function animate() {
-        console.log("run animation");
-        if (map) map.getSource("geo123").setData(frames[p]);
-        if (p++ < step) {
-          requestAnimationFrame(animate);
-        } else {
-        }
-      });
-    } else console.log("frames:", frames);
-  }
-  function setMapRef(map) {
-    mapRef.current = map;
-  }
-
-  return [frame, setMap];
+// 线性插值（Lerp）函数
+function lerp(start, end, t) {
+  return start + (end - start) * t;
 }
-function useFrames(from, to, step) {
-  const frames = useMemo(
-    () =>
-      from && to && step && from !== to
-        ? getFrames(from, to, step)
-        : from && to && step && from === to
-        ? [from]
-        : [null],
-    [from, to, step]
-  );
-  const frame = useMemo(() => (frames && frames[0] ? frames[0] : oldGeoData), [
-    frames
-  ]);
-  return [frame, frames];
-}
-function usePrevious(value) {
-  const ref = useRef(value);
-  const hasChanged = ref.current !== value;
+
+function useMotionForCoordinates(currentData, duration = 1000) {
+  const [currentFrame, setCurrentFrame] = useState([]);
+  const previousDataRef = useRef(currentData);
+  const startTimeRef = useRef(null);
+  const animationFrameIdRef = useRef(null);
+
   useEffect(() => {
-    if (hasChanged) ref.current = value;
-  }, [value]);
-  return ref.current;
+    if (!currentData || !currentData.length) return;
+
+    const animate = (currentTime) => {
+      if (!startTimeRef.current) {
+        startTimeRef.current = currentTime;
+      }
+      const elapsedTime = currentTime - startTimeRef.current;
+      const t = Math.min(1, elapsedTime / duration);
+      const easedT = easeInOutSine(t);
+
+      const nextFrame = currentData.map((current, index) => {
+        const from = previousDataRef.current[index] || current;
+        return {
+          latitude: lerp(from.latitude, current.latitude, easedT),
+          longitude: lerp(from.longitude, current.longitude, easedT),
+        };
+      });
+
+      setCurrentFrame(nextFrame);
+
+      if (t < 1) {
+        animationFrameIdRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrameIdRef.current = requestAnimationFrame(animate);
+
+    // 更新过去的数据为当前数据，为下一次更新做准备
+    previousDataRef.current = currentData;
+
+    return () => {
+      if (animationFrameIdRef.current) {
+        cancelAnimationFrame(animationFrameIdRef.current);
+      }
+    };
+  }, [currentData, duration]);
+
+  return currentFrame;
 }
 
-export default null;
+export default useMotionForCoordinates;

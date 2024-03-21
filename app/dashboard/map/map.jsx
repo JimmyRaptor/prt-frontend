@@ -1,111 +1,54 @@
-"use client"
-
-import React, {
-  useState,
-  useMemo,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-} from "react";
-import ReactMapboxGl, {
-  Image,
-  GeoJSONLayer,
-  MapContext,
-} from "react-mapbox-gl";
+import React from "react";
+import Map from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useMotion } from "./useMotion.js";
-import van from "./van_0.png";
-const Mapbox = ReactMapboxGl({
-  accessToken:
-    "pk.eyJ1IjoicmV0YXdlciIsImEiOiJjazJld3N3NTMwZTNrM2xtbXVsc3ZhbG80In0.pDFq8W8k0g8FBZgZ9nitpg",
-});
-const center = [135.38535269, -29.57998956833];
-const step = 5;
-const inter = [
-  "interpolate",
-  ["linear"],
-  ["to-number", ["get", "direction"]],
-  0,
-  0,
-  360,
-  360,
-];
-const layout = {
-  "icon-image": "vehicle",
-  "icon-rotate": inter,
-  "icon-size": 0.15,
-  "icon-ignore-placement": true,
-  "icon-allow-overlap": true,
-};
-function getFeatures(data) {
-  return data.map((i) => ({
-    type: "Feature",
-    geometry: {
-      type: "Point",
-      coordinates: [i.lng, i.lat],
-    },
-    properties: {
-      direction: i.direction,
-    },
-  }));
-}
+import CustomTextMarker from "./CustomTextMarker.jsx";
+import config from "./config.json";
 
-export default function Map({ dataSrc }) {
-  const [selected, setSelected] = useState(1);
-  const mapRef = useRef();
-  const step = 120;
-  const geoData = useMemo(
-    () => ({
-      type: "FeatureCollection",
-      features: getFeatures(dataSrc[selected]),
-    }),
-    [dataSrc, selected]
-  );
+const center = [135.38535269, -29.579989568];
+function SimpleMap(data) {
+  const getColor = (states) => {
+    switch (states) {
+      case 0:
+        return "#5DAB53";
+      case 1:
+        return "#E0A953";
+      case 2:
+        return "#70B4FF";
+      case 3:
+        return "#E06353";
+      default:
+        return "transparent";
+    }
+  };
 
-  const [frame, setMap] = useMotion(geoData, step);
-  console.log("frame", frame);
-  useLayoutEffect(() => {
-    mapRef.current && mapRef.current.getSource("geo123").setData(frame);
-  }, [frame, mapRef.current]);
-  function handleUpdate() {
-    setSelected(selected === 0 ? 1 : 0);
-  }
-  function onMapLoad(map) {
-    mapRef.current = map;
-    setMap(map);
-    console.log("onMapLoad", map);
-  }
   return (
-    <>
-      <button onClick={handleUpdate} style={{ margin: "5px" }}>
-        Update Data
-      </button>
-      <Mapbox
-        style="mapbox://styles/mapbox/satellite-streets-v12"
-        containerStyle={{
-          height: "100vh",
-          width: "100vw",
+    <div style={{ display: "flex", height: "90vh" }}>
+      <Map
+        initialViewState={{
+          longitude: center[0],
+          latitude: center[1],
+          zoom: 14,
         }}
-        center={center}
-        zoom={[15]}
-        onDragEnd={(map, e) => console.log("Bounds:", map.getBounds())}
-        onClick={(map, e) => console.log("clicked", e.lngLat)}
-        onStyleLoad={(map) => onMapLoad(map)}
+        style={{ width: "100%", height: "100%" }}
+        mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
+        mapboxAccessToken="pk.eyJ1IjoicmV0YXdlciIsImEiOiJjazJld3N3NTMwZTNrM2xtbXVsc3ZhbG80In0.pDFq8W8k0g8FBZgZ9nitpg"
       >
-        {/* <MapContext.Consumer>
-          {(map) => {
-            console.log("map", map);
-          }}
-        </MapContext.Consumer> */}
-        <Image
-          id={"vehicle"}
-          url={van}
-          options={{ width: 20, height: 20 }}
-          alt=""
-        />
-        {console.log("frame inside map", frame)}
-        <GeoJSONLayer id={"geo123"} data={frame} symbolLayout={layout} />
-      </Mapbox>
-    </>
+        {Array.isArray(data.data) &&
+          data.data.map((data) => (
+            <CustomTextMarker
+              latitude={data.latitude}
+              longitude={data.longitude}
+              id={data.id}
+              text={data.id}
+              key={data.id}
+              activity={config[+data.activity]}
+              color={getColor(+data.state)}
+              payload={data.payload}
+            />
+          ))}
+      </Map>
+    </div>
   );
 }
+
+export default SimpleMap;

@@ -1,0 +1,6 @@
+/* SupersetDashboard.module.css */
+.iframeContainer iframe {
+    width: 100%;
+    height: 850px; /* 根据需要调整 */
+  }
+  
