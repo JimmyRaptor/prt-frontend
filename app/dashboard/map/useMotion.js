@@ -1,60 +1,55 @@
 import { useState, useEffect, useRef } from 'react';
 
-// 缓动函数，平滑动画的开始和结束
-function easeInOutSine(t) {
-  return -(Math.cos(Math.PI * t) - 1) / 2;
-}
-
-// 线性插值（Lerp）函数
-function lerp(start, end, t) {
-  return start + (end - start) * t;
-}
-
-function useMotionForCoordinates(currentData, duration = 1000) {
-  const [currentFrame, setCurrentFrame] = useState([]);
+function useMotionForCoordinates(currentData, duration = 1000, frameRate = 15) {
+  const [currentFrame, setCurrentFrame] = useState(currentData);
   const previousDataRef = useRef(currentData);
-  const startTimeRef = useRef(null);
-  const animationFrameIdRef = useRef(null);
+  const timerRef = useRef(null);
+  const stepRef = useRef(0);
+  const totalSteps = frameRate * (duration / 1000); // 计算总步数
 
   useEffect(() => {
-    if (!currentData || !currentData.length) return;
-
-    const animate = (currentTime) => {
-      if (!startTimeRef.current) {
-        startTimeRef.current = currentTime;
-      }
-      const elapsedTime = currentTime - startTimeRef.current;
-      const t = Math.min(1, elapsedTime / duration);
-      const easedT = easeInOutSine(t);
-
+    const updateFrame = () => {
+      stepRef.current++;
+      const t = stepRef.current / totalSteps;
+      
       const nextFrame = currentData.map((current, index) => {
-        const from = previousDataRef.current[index] || current;
-        return {
-          latitude: lerp(from.latitude, current.latitude, easedT),
-          longitude: lerp(from.longitude, current.longitude, easedT),
-        };
+        const from = previousDataRef.current[index];
+        
+        // 检查from是否定义且包含latitude和longitude属性
+        if (from && typeof from.latitude === 'number' && typeof from.longitude === 'number') {
+          return {
+            ...current,
+            latitude: from.latitude + (current.latitude - from.latitude) * t,
+            longitude: from.longitude + (current.longitude - from.longitude) * t,
+          };
+        } else {
+          // 如果from未定义或不包含预期的属性，可以选择返回当前项或设置默认值
+          return current; // 或者设置默认坐标值
+        }
       });
+      
 
       setCurrentFrame(nextFrame);
 
-      if (t < 1) {
-        animationFrameIdRef.current = requestAnimationFrame(animate);
+      if (stepRef.current < totalSteps) {
+        timerRef.current = setTimeout(updateFrame, 1000 / frameRate);
+      } else {
+        clearTimeout(timerRef.current);
+        stepRef.current = 0; // 重置步骤
       }
     };
 
-    animationFrameIdRef.current = requestAnimationFrame(animate);
+    updateFrame(); // 启动动画
 
-    // 更新过去的数据为当前数据，为下一次更新做准备
+    return () => clearTimeout(timerRef.current); // 清理函数
+  }, [currentData, frameRate, totalSteps]);
+
+  useEffect(() => {
     previousDataRef.current = currentData;
-
-    return () => {
-      if (animationFrameIdRef.current) {
-        cancelAnimationFrame(animationFrameIdRef.current);
-      }
-    };
-  }, [currentData, duration]);
+  }, [currentData]);
 
   return currentFrame;
 }
 
 export default useMotionForCoordinates;
+
