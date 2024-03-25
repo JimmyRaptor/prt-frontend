@@ -22,10 +22,10 @@ const FleetContainer = ({ imageSrc, deviceType }) => {
       align="center"
       width="31%"
       onClick={() => handleBoxClick(deviceType)}
-      border="2px solid white" 
-      borderRadius="lg" 
-      p={3} 
-      boxShadow="lg" 
+      border="2px solid white"
+      borderRadius="lg"
+      p={3}
+      boxShadow="lg"
       m={2}
     >
       <Box maxWidth="300px" alignSelf="center">

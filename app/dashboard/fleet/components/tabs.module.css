@@ -13,37 +13,34 @@
 }
 /* animation.module.css */
 .appleBorder {
-    border: solid 1px #e5e5e5; 
-    background-color: #182237; 
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
-                0 1px 3px rgba(0, 0, 0, 0.08);
-    padding: 20px; 
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .appleBorder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1),
-                0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
+  border: solid 1px #e5e5e5;
+  background-color: #182237;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
 
-  .simplifiedText {
-    color: #333; 
-    font-size: 16px; 
-    font-weight: 400; 
-  }
-  
-  .hoverFloat {
-    transition: transform 0.1s ease-in-out;
-  }
-  
-  .hoverFloat:active {
-    transform: translateY(-10px);
-  }
+.appleBorder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.simplifiedText {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hoverFloat {
+  transition: transform 0.1s ease-in-out;
+}
+
+.hoverFloat:active {
+  transform: translateY(-10px);
+}

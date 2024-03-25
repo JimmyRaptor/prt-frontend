@@ -4,7 +4,7 @@ import Image from "next/image";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
-  MdShoppingBag,
+  MdMap,
   MdWork,
   MdAnalytics,
   MdPeople,
@@ -24,14 +24,9 @@ const menuItems = [
         icon: <MdDashboard />,
       },
       {
-        title: "Users",
-        path: "/dashboard/users",
-        icon: <MdSupervisedUserCircle />,
-      },
-      {
         title: "Map",
         path: "/dashboard/map",
-        icon: <MdShoppingBag />,
+        icon: <MdMap />,
       },
       {
         title: "Fleet",

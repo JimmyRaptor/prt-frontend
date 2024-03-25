@@ -1,0 +1,284 @@
+{
+  "assets": {
+    "1": {
+      "id": "1",
+      "device_id": "",
+      "t ": "DR",
+      "oem": "Sandvik ",
+      "mod": "D75kx ",
+      "n": "DR1770"
+    },
+    "2": {
+      "id": "2",
+      "device_id": "4827e213f0f0",
+      "t ": "DR",
+      "oem": "Sandvik ",
+      "mod": "Dl650i",
+      "n": "DR1771"
+    },
+    "3": {
+      "id": "3",
+      "device_id": "",
+      "t ": "DR",
+      "oem": "Sandvik ",
+      "mod": "Dl650i",
+      "n": "DR1772"
+    },
+    "4": {
+      "id": "4",
+      "device_id": "",
+      "t ": "DR",
+      "oem": "Atlas Copco ",
+      "mod": "L8",
+      "n": "DR1773"
+    },
+    "5": {
+      "id": "5",
+      "device_id": "",
+      "t ": "DR",
+      "oem": "Humma",
+      "mod": "UV35-25",
+      "n": "MC3270"
+    },
+    "6": {
+      "id": "6",
+      "device_id": "",
+      "t ": "EX",
+      "oem": "Hitachi",
+      "mod": "EX1900 - 6 ",
+      "n": "EX1102 "
+    },
+    "7": {
+      "id": "7",
+      "device_id": "3030f94f793c",
+      "t ": "EX",
+      "oem": "Hitachi",
+      "mod": "EX1200 - 7 BH",
+      "n": "EX1103"
+    },
+    "8": {
+      "id": "8",
+      "device_id": "",
+      "t ": "EX",
+      "oem": "Cat",
+      "mod": "330GC HEX ",
+      "n": "EX1106"
+    },
+    "9": {
+      "id": "9",
+      "device_id": "4827e213e544",
+      "t ": "EX",
+      "oem": "Hitachi",
+      "mod": "EX1200-8",
+      "n": "EX1104"
+    },
+    "10": {
+      "id": "10",
+      "device_id": "",
+      "t ": "WL",
+      "oem": "Cat",
+      "mod": "988K",
+      "n": "WL1253"
+    },
+    "11": {
+      "id": "11",
+      "device_id": "",
+      "t ": "WL",
+      "oem": "Cat",
+      "mod": "988K",
+      "n": "WL1254"
+    },
+    "12": {
+      "id": "12",
+      "device_id": "",
+      "t ": "WL",
+      "oem": "Cat ",
+      "mod": "950M",
+      "n": "WL1255"
+    },
+    "13": {
+      "id": "13",
+      "device_id": "",
+      "t ": "WL",
+      "oem": "Cat",
+      "mod": "914M",
+      "n": "WL1256"
+    },
+    "14": {
+      "id": "14",
+      "device_id": "",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1424"
+    },
+    "15": {
+      "id": "15",
+      "device_id": "3030f94e91c8",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1425"
+    },
+    "16": {
+      "id": "16",
+      "device_id": "",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1426"
+    },
+    "17": {
+      "id": "17",
+      "device_id": "4827e213e55c",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1427"
+    },
+    "18": {
+      "id": "18",
+      "device_id": "3030f94f7964",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1428"
+    },
+    "19": {
+      "id": "19",
+      "device_id": "",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1429"
+    },
+    "20": {
+      "id": "20",
+      "device_id": "3030f94f787c",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1430"
+    },
+    "21": {
+      "id": "21",
+      "device_id": "3030f94f78a8",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1431"
+    },
+    "22": {
+      "id": "22",
+      "device_id": "3030f94e9450",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT1432"
+    },
+    "23": {
+      "id": "23",
+      "device_id": "3030f94f7800",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT3007"
+    },
+    "24": {
+      "id": "24",
+      "device_id": "3030f94e91b4",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT3008"
+    },
+    "25": {
+      "id": "25",
+      "device_id": "4827e213e5a8",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT3009"
+    },
+    "26": {
+      "id": "26",
+      "device_id": "3030f94f7974",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT3006"
+    },
+    "27": {
+      "id": "27",
+      "device_id": "3030f94f7818",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777F",
+      "n": "RD409"
+    },
+    "28": {
+      "id": "28",
+      "device_id": "3030f94f79cc",
+      "t ": "DT",
+      "oem": "Cat",
+      "mod": "777G",
+      "n": "DT3002"
+    },
+    "29": {
+      "id": "29",
+      "device_id": "",
+      "t ": "WC",
+      "oem": "Cat",
+      "mod": "740B",
+      "n": "WT2145"
+    },
+    "30": {
+      "id": "30",
+      "device_id": "",
+      "t ": "WC",
+      "oem": "Cat",
+      "mod": "740B",
+      "n": "WT2146"
+    },
+    "31": {
+      "id": "31",
+      "device_id": "",
+      "t ": "GR",
+      "oem": "Cat",
+      "mod": "16M",
+      "n": "GR0910"
+    },
+    "32": {
+      "id": "32",
+      "device_id": "3030f94f78d0",
+      "t ": "DZ",
+      "oem": "Cat ",
+      "mod": "D9T",
+      "n": "DZ1020"
+    },
+    "33": {
+      "id": "33",
+      "device_id": "4827e213e53c",
+      "t ": "DZ",
+      "oem": "Cat ",
+      "mod": "D10T2",
+      "n": "DZ1022"
+    },
+    "34": {
+      "id": "34",
+      "device_id": "",
+      "t ": "DZ",
+      "oem": "Cat ",
+      "mod": "D9T",
+      "n": "DZ07"
+    },
+    "35": {
+      "id": "35",
+      "device_id": "4827e213f120",
+      "t ": "DR",
+      "oem": "Sandvik ",
+      "mod": "Dl650i",
+      "n": "DR1774"
+    }
+  }
+}

@@ -1,77 +1,80 @@
-import Image from "next/image";
-import { Box, Flex } from "@chakra-ui/react";
+import { Button, VStack, Text, Flex } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import TabsComponent from "./TabsComponent";
+import { GetState } from "@/app/utils/getState";
+import DeviceImage from "./DeviceImage";
 
-
-
-
-const Device = ({ type, device, onClick }) => {
-  const { name, states } = device;
-  const GetState = (states) => {
-    switch (states) {
-      case 0:
-        return { color: "#5DAB53", name: "Ready" };
-      case 1:
-        return { color: "#E0A953", name: "Delay" };
-      case 2:
-        return { color: "#70B4FF", name: "Standby" };
-      case 3:
-        return { color: "#E06353", name: "Down" };
-      default:
-        return { color: "transparent", name: "Unknown" }; 
-    }
+const Device = ({ device, type }) => {
+  const [tabPosition, setTabPosition] = useState({ x: 0, y: 0 });
+  const [showTabs, setShowTabs] = useState(false);
+  const handleClick = (device, e) => {
+    e.preventDefault();
+    const rect = e.target.getBoundingClientRect();
+    const position = { x: rect.left, y: rect.bottom };
+    setTabPosition(position);
+    setShowTabs(!showTabs);
   };
-  
-  
+
   return (
-    <Flex
-      direction="column"
+    <VStack
       align="center"
-      onClick={onClick}
+      spacing={4}
       className="text-center"
-      border="2px solid white" 
+      border="2px solid white"
       borderRadius="lg"
+      p={4} // Padding for the VStack
     >
-      <Image
-        src={`/fleet/${type}_big.png`}
-        width={200}
-        height={200}
-        alt={name}
-      />
+      <DeviceImage device={device} type={type}/>
+      <Text fontSize="25px" fontWeight="bold" color="white">
+        {device.n}
+      </Text>
       <Flex
-        direction="row"
-        width="200px"
+        width="100%"
         justify="space-between"
-        marginBottom="1rem"
+        px={3}
+        fontSize="15px"
+        color="white"
+        fontWeight="bold"
+        borderBottom="2px solid white"
       >
-        <Box
-          width="calc(50% - 0.5rem)"
-          height="50px"
-          fontSize="20"
-          fontWeight="bold"
-          borderRadius="md"
-          bg="#006699"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          {name}
-        </Box>
-        <Box
-          width="calc(50% - 0.5rem)"
-          height="50px"
-          fontSize="20"
-          fontWeight="bold"
-          color="white"
-          bg={GetState(states).color}
-          borderRadius="md"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          {GetState(states).name}
-        </Box>
+        <Text textAlign="left">Mod:</Text>
+        <Text textAlign="right">{device.mod}</Text>
       </Flex>
-    </Flex>
+      <Flex
+        width="100%"
+        justify="space-between"
+        px={3}
+        fontSize="15px"
+        color="white"
+        fontWeight="bold"
+        borderBottom="2px solid white"
+      >
+        <Text textAlign="left">OEM:</Text>
+        <Text textAlign="right">{device.oem}</Text>
+      </Flex>
+      <Button
+        height="50px"
+        width="300px"
+        fontSize="20px"
+        fontWeight="bold"
+        color="white"
+        bg={GetState(device.state).color}
+        borderRadius="md"
+        onClick={(e) => handleClick(device, e)}
+        boxShadow="lg"
+        border="2px solid"
+        borderColor="gray.200"
+      >
+        {GetState(device.state).name}
+      </Button>
+      {showTabs && (
+        <TabsComponent
+          device={device}
+          tabPosition={tabPosition}
+          setShowTabs={setShowTabs}
+        />
+      )}
+    </VStack>
   );
 };
 

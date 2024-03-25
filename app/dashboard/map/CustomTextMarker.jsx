@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Marker } from "react-map-gl";
 import { Flex, Box, Text, Progress } from "@chakra-ui/react";
 import TruckIcon from "./TruckIcon.jsx"; // 确保正确导入你的 TruckIcon 组件
+import Image from "next/image";
 
 function CustomMarker({ longitude, latitude, id, color, activity, payload }) {
   // 使用useState钩子添加一个新的状态isDetailVisible来控制详情的显示与隐藏
   const [isDetailVisible, setIsDetailVisible] = useState(false);
-
   // 定义点击事件处理函数
   const toggleDetailVisibility = () => {
     setIsDetailVisible(!isDetailVisible);
   };
-
+  //console.log(longitude, latitude, id, color, activity, payload)
   return (
     <Marker
       longitude={longitude}
@@ -19,10 +19,7 @@ function CustomMarker({ longitude, latitude, id, color, activity, payload }) {
       offsetLeft={-20}
       offsetTop={-10}
     >
-      {/* 在点击点的上方动态显示Toggle组件 */}
-      <Box
-        position="relative" // 确保父容器是相对定位，以便于子元素使用绝对定位
-      >
+      <Box position="relative">
         {isDetailVisible && (
           <Flex
             direction="column"
@@ -31,11 +28,11 @@ function CustomMarker({ longitude, latitude, id, color, activity, payload }) {
             color={color}
             align="center"
             width="auto"
-            position="absolute" // 使用绝对定位来控制组件的具体位置
-            bottom="30px" // 将组件定位到圆形上方
+            position="absolute"
+            bottom="30px"
             left="50%"
-            transform="translateX(-50%)" // 确保组件水平居中
-            zIndex="1" // 提高组件的堆叠顺序，确保它显示在圆形之上
+            transform="translateX(-50%)"
+            zIndex="1"
           >
             <Box p="5px 10px" width="100%">
               <Flex align="center">
@@ -61,17 +58,28 @@ function CustomMarker({ longitude, latitude, id, color, activity, payload }) {
         )}
         {/* 圆形组件 */}
         <Box
-          position="absolute" // 使用绝对定位确保圆形位置正确
-          bg={color} // 可以根据需要更改颜色
-          width="20px"
-          height="20px"
-          borderRadius="50%"
-          bottom="0" // 定位到Marker底部
-          left="50%"
-          transform="translateX(-50%)"
-          onClick={toggleDetailVisibility} // 添加点击事件处理函数
-          cursor="pointer" // 修改鼠标样式为手形，提示用户可以点击
-        />
+          position="relative"
+          width="30px" 
+          height="30px"
+          borderRadius="50%" 
+          bgGradient="linear(to-br, lightblue, deepskyblue)"
+          border="2px solid"
+          borderColor="whiteAlpha.800"
+          boxShadow="0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)"
+          bg={color} 
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          cursor="pointer"
+          onClick={toggleDetailVisibility}
+        >
+          <Image
+            src="/smallTruck.png"
+            alt="Small Truck"
+            layout="fill"
+            objectFit="contain"
+          />
+        </Box>
       </Box>
     </Marker>
   );

@@ -1,46 +1,50 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@chakra-ui/react";
 import styles from "./tabs.module.css";
-import config from "./g_config_0.json";
+import config from "../g_config_0.json";
+import { useFleet } from "@/app/context/fleetContext";
 
-const TabsComponent = ({ device, tabPosition, setSelectedDevice }) => {
+const TabsComponent = ({ device, setShowTabs }) => {
+  const { updateFilteredAssets } = useFleet();
+
   const truckConfig = config.machines.DT777;
   const initialStatuses = Object.entries(config.machines.DT777)
     .filter(([key]) => !isNaN(key))
     .map(([key, value]) => ({
       ...value,
       code: key,
-      isActivityList: false, 
+      isActivityList: false,
     }));
   const [statuses, setStatuses] = useState(initialStatuses);
-  const [gridTemplateColumns, setGridTemplateColumns] = useState("repeat(2, 1fr)");
+  const [gridTemplateColumns, setGridTemplateColumns] =
+    useState("repeat(2, 1fr)");
 
   const boxSize = "100px";
-  const handleClick = (code, isActivityList) => {
+  const handleClick = (status, isActivityList) => {
     if (isActivityList) {
-      
-      setSelectedDevice(null);
+      setShowTabs(false);
     } else {
-
-      const status = statuses.find(status => status.code === code);
+      const status = statuses.find((status) => status.code === status.code);
       if (!status) return;
 
-      const newStatuses = Object.entries(status.activities).map(([activityCode, activity]) => ({
-        desc: activity,
-        colour: status.colour,
-        code: activityCode, 
-        isActivityList: true, 
-      }));
+      const newStatuses = Object.entries(status.activities).map(
+        ([activityCode, activity]) => ({
+          desc: activity,
+          colour: status.colour,
+          code: activityCode,
+          isActivityList: true,
+        })
+      );
 
       setStatuses(newStatuses);
-      setGridTemplateColumns(newStatuses.length > 4 ? "repeat(3, 1fr)" : "repeat(2, 1fr)");
+      setGridTemplateColumns(
+        newStatuses.length > 4 ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
+      );
     }
   };
   return (
     <Box
       position="absolute"
-      top={tabPosition.y}
-      left={tabPosition.x}
       className={`${styles.appleBorder} ${styles.growAnimation}`}
     >
       <Box
@@ -51,7 +55,7 @@ const TabsComponent = ({ device, tabPosition, setSelectedDevice }) => {
         p={2}
         textAlign="center"
       >
-        {device.name}
+        {device.n}
       </Box>
       <Grid templateColumns={gridTemplateColumns} gap={2}>
         {statuses.map((status, index) => (
@@ -68,7 +72,7 @@ const TabsComponent = ({ device, tabPosition, setSelectedDevice }) => {
             justifyContent="center"
             borderRadius="20px"
             className={`${styles.simplifiedText} ${styles.hoverFloat}`}
-            onClick={() => handleClick(status.code, status.isActivityList)}
+            onClick={() => handleClick(status, status.isActivityList)}
           >
             {status.desc}
           </Box>

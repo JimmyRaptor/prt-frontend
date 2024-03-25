@@ -1,20 +1,18 @@
 .flexContainer {
   margin-top: 1rem;
   display: flex;
-  width: 30%; 
+  width: 30%;
 }
 
 .imageContainer {
-  flex: 1; 
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items:first baseline;
+  align-items: first baseline;
   max-width: 300px;
 }
 
 .imageContainer img {
   width: 100%;
-  height: auto; 
+  height: auto;
 }
-
-
