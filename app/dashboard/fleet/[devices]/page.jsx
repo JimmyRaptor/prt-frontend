@@ -7,11 +7,14 @@ import {
   BreadcrumbLink,
   SimpleGrid,
   Flex,
+  Box,
+  VStack
 } from "@chakra-ui/react";
 import Device from "../components/Device";
 import Legend from "../components/Legend";
 import { useState, useMemo } from "react";
 import { useFleet } from "@/app/context/fleetContext";
+import Select from "../components/Select";
 
 const DevicePage = () => {
   const { filteredAssets } = useFleet();
@@ -41,7 +44,7 @@ const DevicePage = () => {
   return (
     <div style={{ color: "white" }}>
       <Flex justifyContent="space-between" alignItems="center" margin="10px">
-        <Breadcrumb fontWeight="bold" fontSize="xl" margin="20px">
+        <Breadcrumb fontWeight="bold" fontSize="l" marginTop="15px">
           <BreadcrumbItem>
             <BreadcrumbLink href="/dashboard/fleet">Devices</BreadcrumbLink>
           </BreadcrumbItem>
@@ -49,21 +52,27 @@ const DevicePage = () => {
             <BreadcrumbLink href="">{type}</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
-        <Legend />
       </Flex>
+      <Flex direction="row" > 
       {isLoading ? (
-        <div>Loading...</div>
+        <Box flex="1" display="flex" justifyContent="center" alignItems="center">
+          Loading...
+        </Box>
       ) : (
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="20px">
-          {filteredAssets[typeName]?.map((device, index) => (
-            <Device
-              key={device.id || index}
-              device={device}
-              type={type}
-            />
-          ))}
-        </SimpleGrid>
+        <Flex direction="row" width="100%" overflow="auto"> 
+          <Box flex="3" padding="20px"> 
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="20px" width="100%">
+              {filteredAssets[typeName]?.map((device, index) => (
+                <Device key={device.id || index} device={device} type={type} />
+              ))}
+            </SimpleGrid>
+          </Box>
+          <VStack flex="1" padding="10px"> 
+            <Select />
+          </VStack>
+        </Flex>
       )}
+    </Flex>
     </div>
   );
 };

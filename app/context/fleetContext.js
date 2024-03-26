@@ -6,7 +6,6 @@ import config from "@/app/dashboard/fleet/config.json";
 import isEqual from "lodash/isEqual";
 
 const FleetContext = createContext();
-
 function updateOriginalDataWithFleetData(originalData, fleetData) {
   fleetData.forEach((fleetItem) => {
     Object.values(originalData).forEach((item) => {
@@ -46,7 +45,7 @@ export const FleetProvider = ({ children }) => {
         updateOriginalDataWithFleetData(config.assets, newFleetData);
         const updatedFilteredAssets = filterAssetsByTypes(config.assets, types);
         setFilteredAssets(updatedFilteredAssets);
-        
+
         previousFleetDataRef.current = newFleetData;
       }
     }, 1000);

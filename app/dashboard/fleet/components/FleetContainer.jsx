@@ -2,15 +2,20 @@ import Image from "next/image";
 import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 
-const FleetContainer = ({ imageSrc, deviceType }) => {
+const FleetContainer = ({ imageSrc, deviceType, devices }) => {
   const router = useRouter();
   const statuses = [
-    { label: "Down", color: "#E06353" },
-    { label: "Delay", color: "#E0A953" },
     { label: "Ready", color: "#5DAB53" },
+    { label: "Delay", color: "#E0A953" },
     { label: "Standby", color: "#70B4FF" },
+    { label: "Down", color: "#E06353" },
   ];
-
+    if(devices){
+      for (let i = 0; i < statuses.length; i++) {
+        statuses[i].count = devices.filter((device) => device.state === i).length;
+      }
+    }
+    console.log(statuses)
   const handleBoxClick = (type) => {
     const path = `/dashboard/fleet/${type.toLowerCase()}`;
     router.push(path);
@@ -51,7 +56,7 @@ const FleetContainer = ({ imageSrc, deviceType }) => {
             borderRadius="lg"
             shadow="md"
           >
-            {status.label}: 6
+            {status.label}: {status.count}
           </Box>
         ))}
       </SimpleGrid>

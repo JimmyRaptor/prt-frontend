@@ -20,11 +20,11 @@ const TabsComponent = ({ device, setShowTabs }) => {
     useState("repeat(2, 1fr)");
 
   const boxSize = "100px";
-  const handleClick = (status, isActivityList) => {
+  const handleClick = (code, isActivityList) => {
     if (isActivityList) {
       setShowTabs(false);
     } else {
-      const status = statuses.find((status) => status.code === status.code);
+      const status = statuses.find((status) => status.code === code);
       if (!status) return;
 
       const newStatuses = Object.entries(status.activities).map(
@@ -72,7 +72,7 @@ const TabsComponent = ({ device, setShowTabs }) => {
             justifyContent="center"
             borderRadius="20px"
             className={`${styles.simplifiedText} ${styles.hoverFloat}`}
-            onClick={() => handleClick(status, status.isActivityList)}
+            onClick={() => handleClick(status.code, status.isActivityList)}
           >
             {status.desc}
           </Box>

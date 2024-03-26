@@ -54,7 +54,7 @@ const Device = ({ device, type }) => {
       </Flex>
       <Button
         height="50px"
-        width="300px"
+        width={280}
         fontSize="20px"
         fontWeight="bold"
         color="white"
@@ -66,6 +66,7 @@ const Device = ({ device, type }) => {
         borderColor="gray.200"
       >
         {GetState(device.state).name}
+        {GetState(device.state).icon}
       </Button>
       {showTabs && (
         <TabsComponent
