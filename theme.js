@@ -1,4 +1,3 @@
-
 import { extendTheme } from "@chakra-ui/react";
 
 const config = {
@@ -7,14 +6,15 @@ const config = {
   styles: {
     global: {
       body: {
-        bg: "blue.1000", 
+        bg: "blue.1000",
         color: "white.100",
       },
     },
   },
 };
 
-
-const theme = extendTheme({ config });
+const theme = extendTheme({
+  config,
+});
 
 export default theme;

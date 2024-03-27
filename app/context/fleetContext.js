@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, useRef } from "react";
 import { fetchFleetData } from "@/app/api";
-import config from "@/app/dashboard/fleet/config.json";
+import config from "@/app/config/config.json";
 import isEqual from "lodash/isEqual";
 
 const FleetContext = createContext();
@@ -12,6 +12,9 @@ function updateOriginalDataWithFleetData(originalData, fleetData) {
       if (item.device_id === fleetItem.id) {
         item.state = fleetItem.state;
         item.activity = fleetItem.activity;
+        item.fuel_level = fleetItem.fuel_level;
+        item.payload = fleetItem.payload;
+        item.ground_speed = fleetItem.ground_speed;
       }
     });
   });
@@ -35,7 +38,6 @@ export const FleetProvider = ({ children }) => {
   const [fleetState, setFleetState] = useState([]);
   const [filteredAssets, setFilteredAssets] = useState({});
   const previousFleetDataRef = useRef([]);
-
   useEffect(() => {
     const intervalId = setInterval(async () => {
       const newFleetData = await fetchFleetData();

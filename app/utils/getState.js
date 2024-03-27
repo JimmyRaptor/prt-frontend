@@ -1,4 +1,4 @@
-export const GetState = (states) => {
+export const getState = (states) => {
     switch (states) {
       case 0: return { color: "#5DAB53", name: "Ready" };
       case 1: return { color: "#E0A953", name: "Delay" };

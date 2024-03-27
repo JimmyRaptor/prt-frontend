@@ -5,13 +5,10 @@ import TruckIcon from "./TruckIcon.jsx"; // 确保正确导入你的 TruckIcon �
 import Image from "next/image";
 
 function CustomMarker({ longitude, latitude, id, color, activity, payload }) {
-  // 使用useState钩子添加一个新的状态isDetailVisible来控制详情的显示与隐藏
   const [isDetailVisible, setIsDetailVisible] = useState(false);
-  // 定义点击事件处理函数
   const toggleDetailVisibility = () => {
     setIsDetailVisible(!isDetailVisible);
   };
-  //console.log(longitude, latitude, id, color, activity, payload)
   return (
     <Marker
       longitude={longitude}

@@ -15,7 +15,6 @@ const FleetContainer = ({ imageSrc, deviceType, devices }) => {
         statuses[i].count = devices.filter((device) => device.state === i).length;
       }
     }
-    console.log(statuses)
   const handleBoxClick = (type) => {
     const path = `/dashboard/fleet/${type.toLowerCase()}`;
     router.push(path);

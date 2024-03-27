@@ -20,7 +20,7 @@ const DeviceImage = ({ device, type }) => {
   }, [targetImageSrc]);
 
   return (
-    <Box position="relative" width="100%" height="250px" overflow="hidden">
+    <Box position="relative" width="100%" height="200px" overflow="hidden">
       <Image
         src={imageSrc}
         alt={device.mod || "truck"}

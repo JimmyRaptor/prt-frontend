@@ -1,14 +1,30 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@chakra-ui/react";
 import styles from "./tabs.module.css";
-import config from "../g_config_0.json";
+import config from "@/app/config/g_config.json";
 import { useFleet } from "@/app/context/fleetContext";
 
-const TabsComponent = ({ device, setShowTabs }) => {
+const TabsComponent = ({ device, setShowTabs, type }) => {
   const { updateFilteredAssets } = useFleet();
+  function getInitialStatuses(deviceType, config) {
+    if (deviceType) {
+      switch (deviceType) {
+        case "Truck":
+          return config.machines.DT;
+        case "Drill":
+          return config.machines.DRL;
 
-  const truckConfig = config.machines.DT777;
-  const initialStatuses = Object.entries(config.machines.DT777)
+        case "Excavator":
+          return config.machines.EX;
+        default:
+          return {};
+      }
+    } else {
+      return deviceConfig;
+    }
+  }
+
+  const initialStatuses = Object.entries(getInitialStatuses(type, config))
     .filter(([key]) => !isNaN(key))
     .map(([key, value]) => ({
       ...value,
