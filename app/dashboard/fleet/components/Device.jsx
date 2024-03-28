@@ -18,90 +18,44 @@ const Device = ({ device, type }) => {
 
   return (
     <VStack
+      w="100%"
+      minW="100%"
+      paddingBottom="20%"
+      position="relative"
       align="center"
-      spacing={4}
       className="text-center"
       border="2px solid white"
       borderRadius="lg"
-      p={4} // Padding for the VStack
+      p={4}
+      boxShadow="2xl"
+      color="white"
+      onClick={(e) => handleClick(device, e)}
+      _hover={{
+        cursor: "pointer",
+        bgGradient: "linear(to-br, gray.0, gray.100)",
+        boxShadow: "2xl",
+      }}
+      transition="all 0.2s ease-in-out"
     >
-      <DeviceImage device={device} type={type} />
-      <Text fontSize="25px" fontWeight="bold" color="white">
+      <DeviceImage
+        device={device}
+        type={type}
+        color={getState(device.state).color}
+      />
+      <Text
+        fontSize="15px"
+        fontWeight="bold"
+        color={getState(device.state).color}
+      >
         {device.n}
       </Text>
-      <Flex
-        width="100%"
-        justify="flex-end"
-        pr={3} // Padding right for alignment
-      >
-        <Link
-          fontSize="15px"
-          fontWeight="bold"
-          color="white"
-          textDecoration="underline"
-          _hover={{
-            textDecoration: "none",
-          }}
-          onClick={() => {
-            /* 在这里添加你的点击逻辑 */
-          }}
-        >
-          More information
-        </Link>
-      </Flex>
-      <Flex
-        width="100%"
-        justify="space-between"
-        px={3}
-        fontSize="15px"
-        color="white"
+      <Text
+        fontSize="10px"
         fontWeight="bold"
-        borderBottom="2px solid white"
+        color={getState(device.state).color}
       >
-        <Text textAlign="left">Payload:</Text>
-        <Text textAlign="right">{device.payload}</Text>
-      </Flex>
-      <Flex
-        width="100%"
-        justify="space-between"
-        px={3}
-        fontSize="15px"
-        color="white"
-        fontWeight="bold"
-        borderBottom="2px solid white"
-      >
-        <Text textAlign="left">Ground Speed:</Text>
-        <Text textAlign="right">{device.ground_speed}</Text>
-      </Flex>
-      <Flex
-        width="100%"
-        justify="space-between"
-        px={3}
-        fontSize="15px"
-        color="white"
-        fontWeight="bold"
-        borderBottom="2px solid white"
-      >
-        <Text textAlign="left">Fuel Level:</Text>
-        <Text textAlign="right">{device.fuel_level}</Text>
-      </Flex>
-      <Button
-        height={50}
-        width={280}
-        fontWeight="bold"
-        color="white"
-        bg={getState(device.state).color}
-        borderRadius="md"
-        onClick={(e) => handleClick(device, e)}
-        boxShadow="lg"
-        border="2px solid"
-        borderColor="gray.200"
-      >
-        <Flex flexDirection={"column"}>
-          <Box fontSize={25}>{getState(device.state).name}</Box>
-          <Box fontSize={15}>{getActivities(device, type)}</Box>
-        </Flex>
-      </Button>
+        {device.activity ? getActivities(device, type) : null}
+      </Text>
       {showTabs && (
         <TabsComponent
           device={device}

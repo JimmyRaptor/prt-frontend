@@ -1,35 +1,29 @@
-import Image from "next/image";
-import { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
-
-const DeviceImage = ({ device, type }) => {
-  const defaultImageSrc = `/fleet/${type}_big.png`;
-  const targetImageSrc = `/fleet/devices/${device.mod}.jpg`;
-  const [imageSrc, setImageSrc] = useState(defaultImageSrc);
-
-  useEffect(() => {
-    const loadImage = async (src) => {
-      try {
-        const response = await fetch(src);
-        if (response.ok) setImageSrc(src);
-        if (!response.ok) throw new Error("Image not found");
-      } catch (error) {}
-    };
-
-    loadImage(targetImageSrc);
-  }, [targetImageSrc]);
-
+import TruckIcon from "./TruckIcon";
+import ExcavatorIcon from "./ExcavatorIcon";
+import DrillIcon from "./DrillIcon";
+const DeviceImage = ({ type, color }) => {
+  const selectIcon = (type) => {
+    switch (type) {
+      case "Truck":
+        return <TruckIcon width="100%" height="100%" color={color} />;
+      case "Excavator":
+        return <ExcavatorIcon width="100%" height="100%" color={color} />;
+      case "Drill":
+        return <DrillIcon width="100%" height="100%" color={color} />;
+      default:
+        return null;
+    }
+  };
   return (
-    <Box position="relative" width="100%" height="200px" overflow="hidden">
-      <Image
-        src={imageSrc}
-        alt={device.mod || "truck"}
-        width={300}
-        height={300}
-        unoptimized={true}
-        priority
-        layout="fixed"
-      />
+    <Box
+      w="100%"
+      h="100%"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      {selectIcon(type, color)}
     </Box>
   );
 };

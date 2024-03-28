@@ -4,16 +4,15 @@ import styles from "./tabs.module.css";
 import config from "@/app/config/g_config.json";
 import { useFleet } from "@/app/context/fleetContext";
 
-const TabsComponent = ({ device, setShowTabs, type }) => {
+const TabsComponent = ({ device, setShowTabs, type, tabPosition }) => {
   const { updateFilteredAssets } = useFleet();
-  function getInitialStatuses(deviceType, config) {
+  function getInitialStates(deviceType, config) {
     if (deviceType) {
       switch (deviceType) {
         case "Truck":
           return config.machines.DT;
         case "Drill":
           return config.machines.DRL;
-
         case "Excavator":
           return config.machines.EX;
         default:
@@ -24,37 +23,35 @@ const TabsComponent = ({ device, setShowTabs, type }) => {
     }
   }
 
-  const initialStatuses = Object.entries(getInitialStatuses(type, config))
+  const initialStates = Object.entries(getInitialStates(type, config))
     .filter(([key]) => !isNaN(key))
     .map(([key, value]) => ({
       ...value,
       code: key,
       isActivityList: false,
     }));
-  const [statuses, setStatuses] = useState(initialStatuses);
+  const [states, setStates] = useState(initialStates);
   const [gridTemplateColumns, setGridTemplateColumns] =
     useState("repeat(2, 1fr)");
 
   const boxSize = "100px";
-  const handleClick = (code, isActivityList) => {
+  const handleClick = (event, code, isActivityList) => {
+    event.stopPropagation();
     if (isActivityList) {
       setShowTabs(false);
     } else {
-      const status = statuses.find((status) => status.code === code);
-      if (!status) return;
-
-      const newStatuses = Object.entries(status.activities).map(
+      const state = states.find((state) => state.code === code);
+      const newStates = Object.entries(state.activities).map(
         ([activityCode, activity]) => ({
           desc: activity,
-          colour: status.colour,
+          colour: state.colour,
           code: activityCode,
           isActivityList: true,
         })
       );
-
-      setStatuses(newStatuses);
+      setStates(newStates);
       setGridTemplateColumns(
-        newStatuses.length > 4 ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
+        newStates.length > 4 ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
       );
     }
   };
@@ -62,6 +59,7 @@ const TabsComponent = ({ device, setShowTabs, type }) => {
     <Box
       position="absolute"
       className={`${styles.appleBorder} ${styles.growAnimation}`}
+      zIndex={10}
     >
       <Box
         color="white"
@@ -74,10 +72,10 @@ const TabsComponent = ({ device, setShowTabs, type }) => {
         {device.n}
       </Box>
       <Grid templateColumns={gridTemplateColumns} gap={2}>
-        {statuses.map((status, index) => (
+        {states.map((state, index) => (
           <Box
             key={index}
-            bg={status.colour}
+            bg={state.colour}
             width={boxSize}
             height={boxSize}
             fontWeight="900"
@@ -88,9 +86,11 @@ const TabsComponent = ({ device, setShowTabs, type }) => {
             justifyContent="center"
             borderRadius="20px"
             className={`${styles.simplifiedText} ${styles.hoverFloat}`}
-            onClick={() => handleClick(status.code, status.isActivityList)}
+            onClick={(event) =>
+              handleClick(event, state.code, state.isActivityList)
+            }
           >
-            {status.desc}
+            {state.desc}
           </Box>
         ))}
       </Grid>

@@ -16,7 +16,6 @@
     "@module-federation/nextjs-mf": "^8.2.3",
     "@react-spring/web": "^9.7.3",
     "@superset-ui/embedded-sdk": "^0.1.0-alpha.10",
-    "@svgr/webpack": "^8.1.0",
     "axios": "^1.6.7",
     "buffer": "^6.0.3",
     "framer-motion": "^11.0.18",
@@ -33,6 +32,7 @@
     "react-map-gl": "^7.1.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",

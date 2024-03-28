@@ -1,4 +1,4 @@
-import { Checkbox, Stack, Box, Text } from "@chakra-ui/react";
+import { Checkbox, Stack, Box, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { useFleet } from "@/app/context/fleetContext";
 import { useState, useEffect } from "react";
 import { useTheme } from "@chakra-ui/react";
@@ -62,34 +62,35 @@ export default function Select({ type, onAssetsChange }) {
   };
 
   return (
-    <Box w="100%" overflowY="auto" border="1px solid #E2E8F0" borderRadius="lg">
-      <Text as="b" fontSize="2xl" p={5}>
-        Search Devices
-      </Text>
-      <Stack direction="column" spacing="1rem" p={5}>
-        {Object.entries(statusFilter).map(([status, isChecked]) => (
-          <Checkbox
-            key={status}
-            size="lg"
-            isChecked={isChecked}
-            onChange={() => handleChange(status)}
-            sx={{
-              ".chakra-checkbox__control": {
+<Box w="100%" overflowY="auto" >
+  <Wrap spacing="1rem" p={5} align="center">
+    {Object.entries(statusFilter).map(([status, isChecked]) => (
+      <WrapItem key={status}>
+        <Checkbox
+          size="md"
+          color={"white"}
+          fontWeight={"bold"}
+          isChecked={isChecked}
+          onChange={() => handleChange(status)}
+          sx={{
+            ".chakra-checkbox__control": {
+              borderColor: getStatusHexColor(status),
+              _checked: {
+                bg: getStatusHexColor(status),
                 borderColor: getStatusHexColor(status),
-                _checked: {
-                  bg: getStatusHexColor(status),
-                  borderColor: getStatusHexColor(status),
-                },
               },
-              ".chakra-checkbox__label": {
-                ml: 2,
-              },
-            }}
-          >
-            {capitalize(status)}
-          </Checkbox>
-        ))}
-      </Stack>
-    </Box>
+            },
+            ".chakra-checkbox__label": {
+              ml: 2,
+            },
+          }}
+        >
+          {capitalize(status)}
+        </Checkbox>
+      </WrapItem>
+    ))}
+  </Wrap>
+</Box>
+
   );
 }
